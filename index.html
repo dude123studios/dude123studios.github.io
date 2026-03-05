@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Atharv Naphade</title>
+  <meta name="author" content="Atharv Naphade">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Atharv Naphade - CS/AI student at Carnegie Mellon University. Research in LLMs, AI safety, and machine learning.">
+  <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<body>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+
+          <!-- Header / Bio -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr style="padding:0px">
+                <td style="padding:2.5%;width:63%;vertical-align:middle">
+                  <p class="name" style="text-align:center;">
+                    Atharv Naphade
+                  </p>
+                  <p>
+                    I am a sophomore studying Computer Science (AI track) at <a href="https://www.cmu.edu/">Carnegie Mellon University</a>, where I maintain a 4.00 GPA. My research spans large language models, AI safety, and post-training methods.
+                  </p>
+                  <p>
+                    I have published work at venues including <strong>ICLR</strong> and <strong>Nature Scientific Reports</strong>, and I am currently a Research Fellow at <a href="https://sparai.org/">SPAR</a> working on AI safety and jailbreaks. Previously, I interned as a Research Scientist at the <strong>CMU Robotics Department</strong> (scaling RL post-training for vision-language models in collaboration with NVIDIA), and as a Research Engineer at <a href="https://www.ycombinator.com/companies/blast">Refactor (YC S24)</a>.
+                  </p>
+                  <p>
+                    I also create educational content about AI research for a general audience &mdash; <strong>17k followers, 1M+ views</strong> on social media (<a href="https://twitter.com/agi_atharv">@agi_atharv</a>).
+                  </p>
+                  <p style="text-align:center">
+                    <a href="mailto:anaphade@andrew.cmu.edu">Email</a> &nbsp;/&nbsp;
+                    <a href="https://github.com/dude123studios">GitHub</a> &nbsp;/&nbsp;
+                    <a href="https://www.linkedin.com/in/atharv-naphade-211a69219/">LinkedIn</a> &nbsp;/&nbsp;
+                    <a href="https://twitter.com/agi_atharv">Twitter / X</a> &nbsp;/&nbsp;
+                    <a href="data/AtharVNaphade-CV.pdf">CV</a>
+                  </p>
+                </td>
+                <td style="padding:2.5%;width:37%;max-width:37%">
+                  <a href="images/atharv.jpg">
+                    <!-- Replace images/atharv.jpg with your actual profile photo -->
+                    <img style="width:100%;max-width:100%;object-fit:cover;border-radius:50%;" alt="profile photo" src="images/atharv.jpg" onerror="this.src='images/placeholder.svg'" class="hoverZoomLink">
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Research -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:16px;width:100%;vertical-align:middle">
+                  <h2>Research</h2>
+                  <p>
+                    My work focuses on understanding and improving large language models: their introspective capabilities, decision-making dynamics under uncertainty, and post-training alignment. I am especially interested in AI safety and making reasoning models more reliable.
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Publications -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+
+              <!-- Paper 1: Me, Myself, and I -->
+              <tr onmouseout="introspect_stop()" onmouseover="introspect_start()">
+                <td style="padding:16px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id="introspect_image">
+                      <!-- Replace with your actual paper figure -->
+                      <img src="images/paper_introspect_after.png" width="160" alt="Me, Myself, and I paper" onerror="this.src='images/placeholder.svg'">
+                    </div>
+                    <img src="images/paper_introspect.png" width="160" id="introspect_image_base" alt="Me, Myself, and I paper thumbnail" onerror="this.src='images/placeholder.svg'">
+                  </div>
+                  <script type="text/javascript">
+                    function introspect_start() {
+                      document.getElementById('introspect_image').style.opacity = "1";
+                    }
+                    function introspect_stop() {
+                      document.getElementById('introspect_image').style.opacity = "0";
+                    }
+                    introspect_stop();
+                  </script>
+                </td>
+                <td style="padding:8px;width:75%;vertical-align:middle">
+                  <a href="data/me_myself_and_i.pdf">
+                    <span class="papertitle">Me, Myself, and I: Evaluating and Explaining LLM Introspection</span>
+                  </a>
+                  <br>
+                  <strong>Atharv Naphade</strong>,
+                  Samarth Bhargav,
+                  Sean Lim,
+                  McNair Shah
+                  <br>
+                  <em>ICLR 2026 Workshop on Human-Centered AI for Reliable Systems (HCAIR)</em>
+                  <br>
+                  <a href="data/me_myself_and_i.pdf">PDF</a>
+                  <p>
+                    Evaluates and explains the introspective capabilities of large language models &mdash; how well they understand their own internal states, knowledge, and reasoning processes.
+                  </p>
+                </td>
+              </tr>
+
+              <!-- Paper 2: RAG QA -->
+              <tr onmouseout="rag_stop()" onmouseover="rag_start()">
+                <td style="padding:16px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id="rag_image">
+                      <!-- Replace with your actual paper figure -->
+                      <img src="images/paper_rag_after.png" width="160" alt="RAG paper" onerror="this.src='images/placeholder.svg'">
+                    </div>
+                    <img src="images/paper_rag.png" width="160" id="rag_image_base" alt="RAG paper thumbnail" onerror="this.src='images/placeholder.svg'">
+                  </div>
+                  <script type="text/javascript">
+                    function rag_start() {
+                      document.getElementById('rag_image').style.opacity = "1";
+                    }
+                    function rag_stop() {
+                      document.getElementById('rag_image').style.opacity = "0";
+                    }
+                    rag_stop();
+                  </script>
+                </td>
+                <td style="padding:8px;width:75%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2601.06189">
+                    <span class="papertitle">Rational Synthesizers or Heuristic Followers? Analyzing LLMs in RAG-based Question-Answering</span>
+                  </a>
+                  <br>
+                  <strong>Atharv Naphade</strong>
+                  <br>
+                  <em>arXiv</em> &nbsp; (ACL ARR Submission)
+                  <br>
+                  <a href="https://arxiv.org/abs/2601.06189">arXiv</a>
+                  <p>
+                    Studied the decision-making dynamics of LLMs when retrieved context conflicts with parametric knowledge. Found that LLMs follow simple positional and frequency heuristics rather than performing genuine rational synthesis.
+                  </p>
+                </td>
+              </tr>
+
+              <!-- Paper 3: COVID-19 -->
+              <tr onmouseout="covid_stop()" onmouseover="covid_start()">
+                <td style="padding:16px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id="covid_image">
+                      <!-- Replace with your actual paper figure -->
+                      <img src="images/paper_covid_after.png" width="160" alt="COVID paper" onerror="this.src='images/placeholder.svg'">
+                    </div>
+                    <img src="images/paper_covid.png" width="160" id="covid_image_base" alt="COVID paper thumbnail" onerror="this.src='images/placeholder.svg'">
+                  </div>
+                  <script type="text/javascript">
+                    function covid_start() {
+                      document.getElementById('covid_image').style.opacity = "1";
+                    }
+                    function covid_stop() {
+                      document.getElementById('covid_image').style.opacity = "0";
+                    }
+                    covid_stop();
+                  </script>
+                </td>
+                <td style="padding:8px;width:75%;vertical-align:middle">
+                  <a href="https://www.nature.com/articles/s41598-024-57634-6">
+                    <span class="papertitle">Conventional and frugal methods of estimating COVID-19-related excess deaths and undercount factors</span>
+                  </a>
+                  <br>
+                  Abhishek M. Dedhe,
+                  Aakash A. Chowkase,
+                  Niramay V. Gogate,
+                  Manas M. Kshirsagar,
+                  Rohan Naphade,
+                  <strong>Atharv Naphade</strong>,
+                  <em>et al.</em>
+                  <br>
+                  <em>Nature Scientific Reports</em>, 2024
+                  <br>
+                  <a href="https://www.nature.com/articles/s41598-024-57634-6">Paper</a>
+                  <p>
+                    Estimated COVID-19-related excess mortality using novel deep learning and statistical methods. Results were presented to global scientific advisors at the <strong>G20 Global Health Summit</strong>.
+                  </p>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <!-- Experience -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:16px;width:100%;vertical-align:middle">
+                  <h2>Experience</h2>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+
+              <tr>
+                <td style="padding:8px 16px;width:75%;vertical-align:top">
+                  <strong>Software Engineer Intern</strong> &mdash; <a href="https://www.roblox.com/">Roblox</a>
+                  <br><em>Summer 2026 (Incoming)</em>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:8px 16px;width:75%;vertical-align:top">
+                  <strong>Jane Street FTTP</strong>
+                  <br><em>Spring 2026</em>
+                  <br>Highly selective 1-week Trading and Technology Program. 1 of 60 invitees out of thousands of applicants.
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:8px 16px;width:75%;vertical-align:top">
+                  <strong>Research Fellow</strong> &mdash; <a href="https://sparai.org/">SPAR (sparai.org)</a>
+                  <br><em>Spring 2026</em>
+                  <br>Working on jailbreaks for the AI Safety stream.
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:8px 16px;width:75%;vertical-align:top">
+                  <strong>Research Scientist Intern</strong> &mdash; CMU Robotics Department
+                  <br><em>Fall 2025</em>
+                  <br>Scaling up RL post-training of Vision Language Models. Collaboration with NVIDIA Researchers.
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:8px 16px;width:75%;vertical-align:top">
+                  <strong>Research Engineer</strong> &mdash; <a href="https://www.ycombinator.com/companies/blast">Refactor (YCombinator S24)</a>
+                  <br><em>Summer 2025</em>
+                  <br>Improved robustness of Lowe&rsquo;s AI at scale by deploying novel RLVR environments. Implemented 11+ full-stack infrastructure features in SQL, Redis, and Next.js for scalable LLM evaluation including multi-turn evals, error tracking &amp; mitigation, and efficient guardrails. <strong>First hire.</strong>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:8px 16px;width:75%;vertical-align:top">
+                  <strong>AI Team Lead</strong> &mdash; ScottyLabs (CMU&rsquo;s largest CS club)
+                  <br><em>Fall 2025</em>
+                  <br>Building agents to help college students track assignments and classes.
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:8px 16px;width:75%;vertical-align:top">
+                  <strong>Machine Learning Engineer</strong> &mdash; Iowa State University
+                  <br><em>2024</em>
+                  <br>Built video-based deep learning models to detect and report risky driving behaviors in real-time using PyTorch &amp; DeepStream. Algorithm <strong>deployed on 260+ highway cameras</strong> under Professor Anuj Sharma.
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:8px 16px;width:75%;vertical-align:top">
+                  <strong>AI Educator</strong> &mdash; Social Media (<a href="https://twitter.com/agi_atharv">@agi_atharv</a>)
+                  <br><strong>17k followers, 1M+ views</strong> explaining AI research for a general audience.
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+          <!-- Awards -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:16px;width:100%;vertical-align:middle">
+                  <h2>Awards &amp; Honors</h2>
+                  <ul>
+                    <li><strong>Putnam 2025</strong> &mdash; Top 270 among all students in North America</li>
+                    <li>USAMTS Medalist; 2&times; BAMO Award Winner</li>
+                    <li><strong>Stanford University Mathematics Camp</strong> Student Researcher (focus: Gradient Fields)</li>
+                    <li>Stanford Math Tournament &mdash; <strong>1st place / 2200</strong> Individual</li>
+                    <li>5&times; AIME Qualifier; Top 250 USAMO Index</li>
+                    <li>USACO Gold (Silver Perfect Score)</li>
+                    <li>Math Kangaroo <strong>National Champion (1st in USA)</strong></li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Footer -->
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:0px">
+                  <br>
+                  <p style="text-align:right;font-size:small;">
+                    Template adapted from <a href="https://jonbarron.info/">Jon Barron</a>.
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
