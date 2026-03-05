@@ -95,10 +95,7 @@ p.name {
   border-radius: 4px;
 }
 
-/* Highlight row on hover */
-tr:hover {
-  background-color: var(--highlight-color);
-}
+/* No row highlight on hover */
 
 /* Responsive: stack on small screens */
 @media (max-width: 600px) {
