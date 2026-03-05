@@ -67,24 +67,9 @@
             <tbody>
 
               <!-- Paper 1: Me, Myself, and pi -->
-              <tr onmouseout="introspect_stop()" onmouseover="introspect_start()">
+              <tr>
                 <td style="padding:16px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id="introspect_image">
-                      <!-- Replace with your actual paper figure -->
-                      <img src="images/paper_introspect_after.png" width="160" alt="Me, Myself, and I paper" onerror="this.src='images/placeholder.svg'">
-                    </div>
-                    <img src="images/paper_introspect.png" width="160" id="introspect_image_base" alt="Me, Myself, and I paper thumbnail" onerror="this.src='images/placeholder.svg'">
-                  </div>
-                  <script type="text/javascript">
-                    function introspect_start() {
-                      document.getElementById('introspect_image').style.opacity = "1";
-                    }
-                    function introspect_stop() {
-                      document.getElementById('introspect_image').style.opacity = "0";
-                    }
-                    introspect_stop();
-                  </script>
+                  <img class="paper-img" src="images/paper_introspect.png" alt="Me, Myself, and pi paper" onerror="this.src='images/placeholder.svg'">
                 </td>
                 <td style="padding:8px;width:75%;vertical-align:middle">
                   <a href="data/me_myself_and_i.pdf">
@@ -106,24 +91,9 @@
               </tr>
 
               <!-- Paper 2: RAG QA -->
-              <tr onmouseout="rag_stop()" onmouseover="rag_start()">
+              <tr>
                 <td style="padding:16px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id="rag_image">
-                      <!-- Replace with your actual paper figure -->
-                      <img src="images/paper_rag_after.png" width="160" alt="RAG paper" onerror="this.src='images/placeholder.svg'">
-                    </div>
-                    <img src="images/paper_rag.png" width="160" id="rag_image_base" alt="RAG paper thumbnail" onerror="this.src='images/placeholder.svg'">
-                  </div>
-                  <script type="text/javascript">
-                    function rag_start() {
-                      document.getElementById('rag_image').style.opacity = "1";
-                    }
-                    function rag_stop() {
-                      document.getElementById('rag_image').style.opacity = "0";
-                    }
-                    rag_stop();
-                  </script>
+                  <img class="paper-img" src="images/paper_rag.png" alt="RAG paper" onerror="this.src='images/placeholder.svg'">
                 </td>
                 <td style="padding:8px;width:75%;vertical-align:middle">
                   <a href="https://arxiv.org/abs/2601.06189">
@@ -142,24 +112,9 @@
               </tr>
 
               <!-- Paper 3: COVID-19 -->
-              <tr onmouseout="covid_stop()" onmouseover="covid_start()">
+              <tr>
                 <td style="padding:16px;width:25%;vertical-align:middle">
-                  <div class="one">
-                    <div class="two" id="covid_image">
-                      <!-- Replace with your actual paper figure -->
-                      <img src="images/paper_covid_after.png" width="160" alt="COVID paper" onerror="this.src='images/placeholder.svg'">
-                    </div>
-                    <img src="images/paper_covid.png" width="160" id="covid_image_base" alt="COVID paper thumbnail" onerror="this.src='images/placeholder.svg'">
-                  </div>
-                  <script type="text/javascript">
-                    function covid_start() {
-                      document.getElementById('covid_image').style.opacity = "1";
-                    }
-                    function covid_stop() {
-                      document.getElementById('covid_image').style.opacity = "0";
-                    }
-                    covid_stop();
-                  </script>
+                  <img class="paper-img" src="images/paper_covid.png" alt="COVID paper" onerror="this.src='images/placeholder.svg'">
                 </td>
                 <td style="padding:8px;width:75%;vertical-align:middle">
                   <a href="https://www.nature.com/articles/s41598-024-57634-6">

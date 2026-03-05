@@ -71,28 +71,12 @@ p.name {
   color: var(--heading-color);
 }
 
-/* Paper image hover effect */
-.one {
-  width: 160px;
-  height: 120px;
-  position: relative;
-}
-
-.two {
-  width: 160px;
-  height: 120px;
-  position: absolute;
-  transition: opacity 0.3s ease-in-out;
-  top: 0;
-  left: 0;
-}
-
-.one img,
-.two img {
+.paper-img {
   width: 160px;
   height: 120px;
   object-fit: cover;
   border-radius: 4px;
+  display: block;
 }
 
 /* No row highlight on hover */
