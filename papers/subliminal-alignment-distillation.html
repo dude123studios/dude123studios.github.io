@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subliminal Alignment Distillation Prevents Emergent Misalignment</title>
+  <meta name="description" content="Interactive paper page for Subliminal Alignment Distillation Prevents Emergent Misalignment.">
+  <style>
+    :root {
+      --bg: #fbf7ef;
+      --panel: #fffaf1;
+      --ink: #241f1a;
+      --muted: #6f675c;
+      --line: #ded2bf;
+      --accent: #9f5f2a;
+      --accent-soft: #ead7bf;
+      --good: #35694d;
+      --warn: #9a6a2f;
+      --bad: #9a3e2f;
+      --shadow: 0 18px 60px rgba(57, 41, 23, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(222, 196, 156, 0.44), transparent 32rem),
+        linear-gradient(180deg, #fbf7ef 0%, #f7efe3 100%);
+      color: var(--ink);
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.9em;
+    }
+
+    .shell {
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 0 12px;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 12px 0 18px;
+      font-size: clamp(42px, 8vw, 84px);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+    }
+
+    .dek {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(19px, 2.4vw, 26px);
+      line-height: 1.45;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 13px;
+    }
+
+    .pill {
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 250, 241, 0.8);
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+      gap: 40px;
+      padding: 52px 0;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+    }
+
+    p {
+      margin: 0 0 22px;
+      font-size: 18px;
+    }
+
+    .lead {
+      font-size: 22px;
+      color: #453b32;
+    }
+
+    .callout {
+      margin: 34px 0;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: rgba(255, 250, 241, 0.78);
+      box-shadow: var(--shadow);
+    }
+
+    .callout strong {
+      color: var(--accent);
+    }
+
+    .side {
+      position: sticky;
+      top: 24px;
+      height: max-content;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255, 250, 241, 0.86);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .card + .card {
+      margin-top: 18px;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .metric {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: baseline;
+      padding: 9px 0;
+      border-top: 1px solid rgba(222, 210, 191, 0.75);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+    }
+
+    .metric:first-of-type {
+      border-top: 0;
+    }
+
+    .metric span:last-child {
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .interactive {
+      margin: 40px 0;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .interactive h3 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 24px 0;
+    }
+
+    label {
+      display: block;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent);
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 24px 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .stage {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #f8efdf;
+    }
+
+    .stage b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+
+    .readout {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .readout div {
+      padding: 14px;
+      border-radius: 16px;
+      background: #f5ead9;
+    }
+
+    .readout b {
+      display: block;
+      color: var(--accent);
+      font-size: 22px;
+    }
+
+    .claim {
+      margin: 30px 0;
+      padding-left: 22px;
+      border-left: 3px solid var(--accent);
+      color: #453b32;
+      font-size: 21px;
+    }
+
+    .footer {
+      padding: 48px 0 70px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 14px;
+    }
+
+    @media (max-width: 820px) {
+      .grid,
+      .controls,
+      .pipeline,
+      .readout {
+        grid-template-columns: 1fr;
+      }
+
+      .side {
+        position: static;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav class="nav" aria-label="Page">
+      <a href="../index.html">← Atharv Naphade</a>
+      <span>Interactive paper note</span>
+    </nav>
+
+    <header class="hero">
+      <div class="eyebrow">Under Review · EMNLP 2026</div>
+      <h1>Subliminal Alignment Distillation Prevents Emergent Misalignment</h1>
+      <p class="dek">
+        A lightweight distillation idea for improving alignment while training on largely unrelated tasks:
+        science, math, coding, and other capability data can carry an alignment signal through context.
+      </p>
+      <div class="meta">
+        <span class="pill">Atharv Naphade*</span>
+        <span class="pill">Alignment</span>
+        <span class="pill">Distillation</span>
+        <span class="pill">In-Context Learning</span>
+      </div>
+    </header>
+
+    <main class="grid">
+      <article>
+        <p class="lead">
+          Emergent misalignment can appear even when training does not obviously target harmful behavior.
+          This project asks whether the distillation process itself can quietly carry a countervailing alignment signal.
+        </p>
+
+        <p>
+          The method introduces Subliminal Alignment Distillation: a drop-in variant of on-policy distillation that
+          places a constitutional system prompt around the teacher signal. The key claim is not that unrelated tasks
+          magically become safety data, but that the training context can shape how the student internalizes behavior
+          while still learning useful capabilities.
+        </p>
+
+        <div class="callout">
+          <strong>Core idea:</strong> preserve the capability benefits of distillation, while making the latent policy
+          update less likely to amplify misaligned patterns.
+        </div>
+
+        <h2>The Setup</h2>
+        <p>
+          Standard on-policy distillation asks a student model to imitate outputs produced during training. Subliminal
+          Alignment Distillation changes the context that generates those outputs: the teacher is conditioned by a
+          constitutional instruction, and the student learns from the resulting behavior across unrelated domains.
+        </p>
+
+        <section class="interactive" aria-labelledby="distill-title">
+          <h3 id="distill-title">Toy Distillation Simulator</h3>
+          <p>
+            This toy model is only explanatory. Increase constitutional strength to push alignment up; increase task
+            distance to make transfer harder. The interesting region is where alignment improves without collapsing
+            task retention.
+          </p>
+
+          <div class="controls">
+            <div>
+              <label for="constitution">Constitutional strength: <span id="constitutionLabel">62%</span></label>
+              <input id="constitution" type="range" min="0" max="100" value="62">
+            </div>
+            <div>
+              <label for="distance">Task unrelatedness: <span id="distanceLabel">58%</span></label>
+              <input id="distance" type="range" min="0" max="100" value="58">
+            </div>
+          </div>
+
+          <div class="pipeline" aria-label="Distillation pipeline">
+            <div class="stage">
+              <b>Teacher Context</b>
+              Constitutional prompt shapes outputs before distillation.
+            </div>
+            <div class="stage">
+              <b>Capability Tasks</b>
+              Math, science, and coding examples provide the training substrate.
+            </div>
+            <div class="stage">
+              <b>Student Update</b>
+              The student learns task behavior plus a latent alignment bias.
+            </div>
+          </div>
+
+          <div class="readout">
+            <div>
+              Alignment gain
+              <b id="alignmentGain">48%</b>
+            </div>
+            <div>
+              Task retention
+              <b id="taskRetention">82%</b>
+            </div>
+            <div>
+              Robustness signal
+              <b id="robustness">Strong</b>
+            </div>
+          </div>
+        </section>
+
+        <h2>Why It Matters</h2>
+        <p>
+          Alignment methods often compete with capability training for data, compute, and simplicity. A drop-in
+          distillation approach is attractive because it can be inserted into existing training workflows without
+          requiring every example to be an explicit safety demonstration.
+        </p>
+
+        <p class="claim">
+          If alignment-relevant behavior can transfer through context during ordinary capability training, then
+          post-training can become both cheaper and harder to accidentally misdirect.
+        </p>
+
+        <h2>What To Look For</h2>
+        <p>
+          The important empirical question is whether the student improves under adversarial pressure without merely
+          becoming evasive or losing performance on unrelated tasks. The page will be updated with final figures,
+          experiments, and a public paper link when available.
+        </p>
+
+        <div class="callout">
+          Drop the representative thumbnail at <code>images/paper_subliminal_alignment.png</code>. If you later publish
+          a PDF or arXiv version, the homepage link can point there while this page stays as the readable companion.
+        </div>
+      </article>
+
+      <aside class="side" aria-label="Paper summary">
+        <div class="card">
+          <h3>One-Sentence Summary</h3>
+          <p>
+            Subliminal Alignment Distillation uses a constitutional teacher context to make ordinary distillation carry
+            a quiet alignment signal.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Paper At A Glance</h3>
+          <div class="metric"><span>Status</span><span>Under Review</span></div>
+          <div class="metric"><span>Venue</span><span>EMNLP 2026</span></div>
+          <div class="metric"><span>Method</span><span>Distillation</span></div>
+          <div class="metric"><span>Focus</span><span>Alignment</span></div>
+        </div>
+        <div class="card">
+          <h3>Image Slot</h3>
+          <p>
+            Homepage thumbnail path: <code>images/paper_subliminal_alignment.png</code>.
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <span>* Author listing from current CV draft.</span>
+    </footer>
+  </div>
+
+  <script>
+    const constitution = document.querySelector("#constitution");
+    const distance = document.querySelector("#distance");
+    const constitutionLabel = document.querySelector("#constitutionLabel");
+    const distanceLabel = document.querySelector("#distanceLabel");
+    const alignmentGain = document.querySelector("#alignmentGain");
+    const taskRetention = document.querySelector("#taskRetention");
+    const robustness = document.querySelector("#robustness");
+
+    function clamp(value, min, max) {
+      return Math.min(max, Math.max(min, value));
+    }
+
+    function updateToy() {
+      const strength = Number(constitution.value);
+      const unrelatedness = Number(distance.value);
+      const transferPenalty = unrelatedness * 0.28;
+      const overconstraintPenalty = Math.max(0, strength - 78) * 0.45;
+      const gain = clamp(strength * 0.88 - transferPenalty, 0, 100);
+      const retention = clamp(96 - overconstraintPenalty - unrelatedness * 0.14, 0, 100);
+      const combined = gain * 0.58 + retention * 0.42;
+
+      constitutionLabel.textContent = `${strength}%`;
+      distanceLabel.textContent = `${unrelatedness}%`;
+      alignmentGain.textContent = `${Math.round(gain)}%`;
+      taskRetention.textContent = `${Math.round(retention)}%`;
+
+      if (combined > 72) {
+        robustness.textContent = "Strong";
+        robustness.style.color = "var(--good)";
+      } else if (combined > 48) {
+        robustness.textContent = "Mixed";
+        robustness.style.color = "var(--warn)";
+      } else {
+        robustness.textContent = "Weak";
+        robustness.style.color = "var(--bad)";
+      }
+    }
+
+    constitution.addEventListener("input", updateToy);
+    distance.addEventListener("input", updateToy);
+    updateToy();
+  </script>
+</body>
+</html>

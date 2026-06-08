@@ -71,6 +71,16 @@ p.name {
   color: var(--heading-color);
 }
 
+.paper-badge {
+  color: #8a5a00;
+  font-weight: 700;
+}
+
+.paper-note {
+  color: #666;
+  font-size: 0.95em;
+}
+
 .paper-img {
   width: 160px;
   height: 120px;
