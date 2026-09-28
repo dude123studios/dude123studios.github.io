@@ -297,6 +297,14 @@ p {
   padding: 0;
 }
 
+.affiliations-title {
+  margin-bottom: 0;
+}
+
+.affiliations-title + .affiliations {
+  margin-top: 0.4em;
+}
+
 .affiliations li {
   display: flex;
   align-items: center;
